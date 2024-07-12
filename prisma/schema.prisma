@@ -21,6 +21,7 @@ model User {
   @@unique([email])
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  discarded_at DateTime?
 }
 
 model Place {
@@ -30,4 +31,5 @@ model Place {
   state String 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
+  discarded_at DateTime?
 }
