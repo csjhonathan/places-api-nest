@@ -8,6 +8,7 @@ import {
   Delete,
   HttpCode,
   HttpStatus,
+  UseGuards,
 } from "@nestjs/common";
 import { PlaceService } from "./place.service";
 import { CreatePlaceDto } from "./dto/create-place.dto";
@@ -20,9 +21,15 @@ import {
   ApiResponse,
 } from "@nestjs/swagger";
 import { PlaceHelpers } from "../helpers/place";
+import { AuthGuard } from "../guards/auth.guard";
 
 @ApiTags("places")
 @ApiBearerAuth()
+@UseGuards(AuthGuard)
+@ApiResponse({
+  status: HttpStatus.UNAUTHORIZED,
+  description: "Unauthorized, you need to provide a valid token!",
+})
 @Controller("places")
 export class PlaceController {
   constructor(private readonly placeService: PlaceService) {}
