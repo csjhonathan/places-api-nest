@@ -23,29 +23,27 @@ export class PlaceService {
     return this.placeRepository.create(createPlaceDto);
   }
 
-  update(id: number, updatePlaceDto: UpdatePlaceDto) {
-    this.checkPlace(id);
+  async update(id: number, updatePlaceDto: UpdatePlaceDto) {
+    await this.checkPlace(id);
     return this.placeRepository.update(id, updatePlaceDto);
   }
 
-  destroy(id: number) {
-    this.checkPlace(id);
+  async destroy(id: number) {
+    await this.checkPlace(id);
     return this.placeRepository.destroy(id);
   }
 
   private async checkPlace(id: number) {
     if (isNaN(id) || !id) {
-      throw new UnprocessableEntityException({
-        message: "Id must be a number!",
-      });
+      throw new UnprocessableEntityException("Id must be a number!");
     }
 
     const place = await this.placeRepository.show(id);
 
     if (!place) {
-      throw new NotFoundException({
-        message: "This place doesn't exists or must be deleted!",
-      });
+      throw new NotFoundException(
+        "This place doesn't exists or must be deleted!",
+      );
     }
 
     return place;
