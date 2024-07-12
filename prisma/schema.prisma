@@ -18,10 +18,10 @@ model User {
   email String
   password String
   name String
-  @@unique([email])
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   discarded_at DateTime?
+  @@unique([email])
 }
 
 model Place {
