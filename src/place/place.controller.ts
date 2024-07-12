@@ -6,37 +6,136 @@ import {
   Patch,
   Param,
   Delete,
+  HttpCode,
+  HttpStatus,
 } from "@nestjs/common";
 import { PlaceService } from "./place.service";
 import { CreatePlaceDto } from "./dto/create-place.dto";
 import { UpdatePlaceDto } from "./dto/update-place.dto";
+import {
+  ApiTags,
+  ApiBearerAuth,
+  ApiBody,
+  ApiOperation,
+  ApiResponse,
+} from "@nestjs/swagger";
+import { PlaceHelpers } from "../helpers/place";
 
+@ApiTags("places")
+@ApiBearerAuth()
 @Controller("places")
 export class PlaceController {
   constructor(private readonly placeService: PlaceService) {}
 
   @Get()
-  index() {
-    return this.placeService.index();
+  @ApiOperation({ summary: "Provides a list with all places!" })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description:
+      "You received a list with all places, or empty array if theres no exists places!",
+    content: {
+      "application/json": {
+        example: {
+          places: [
+            PlaceHelpers.getPlaceExample(),
+            PlaceHelpers.getPlaceExample(),
+            PlaceHelpers.getPlaceExample(),
+            PlaceHelpers.getPlaceExample(),
+          ],
+        },
+      },
+    },
+  })
+  //METHOD
+  async index() {
+    const places = await this.placeService.index();
+    return { places };
   }
 
   @Get(":id")
-  show(@Param("id") id: string) {
-    return this.placeService.show(+id);
+  @ApiOperation({ summary: "Provides a unique place!" })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: "You received one place by requested place id!",
+    content: {
+      "application/json": {
+        example: {
+          place: PlaceHelpers.getPlaceExample(),
+        },
+      },
+    },
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: "The requested place not exists in database!",
+  })
+  @ApiResponse({
+    status: HttpStatus.UNPROCESSABLE_ENTITY,
+    description: "Place id is not a number!",
+  })
+  //METHOD
+  async show(@Param("id") id: string) {
+    const place = await this.placeService.show(+id);
+    return { place };
   }
 
   @Post()
-  create(@Body() createPlaceDto: CreatePlaceDto) {
-    return this.placeService.create(createPlaceDto);
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({ summary: "Register a place!" })
+  @ApiBody({ type: CreatePlaceDto })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: "Your have a required field problem!",
+  })
+  //METHOD
+  async create(@Body() createPlaceDto: CreatePlaceDto) {
+    const place = await this.placeService.create(createPlaceDto);
+    return { place };
   }
 
   @Patch(":id")
-  update(@Param("id") id: string, @Body() updatePlaceDto: UpdatePlaceDto) {
-    return this.placeService.update(+id, updatePlaceDto);
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: "Update a place!" })
+  @ApiBody({ type: CreatePlaceDto })
+  @ApiResponse({
+    status: HttpStatus.BAD_REQUEST,
+    description: "Your have a required field problem!",
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: "Place id doesn't exists or must be deleted!",
+  })
+  @ApiResponse({
+    status: HttpStatus.UNPROCESSABLE_ENTITY,
+    description: "Place id is not a number!",
+  })
+  //METHOD
+  async update(
+    @Param("id") id: string,
+    @Body() updatePlaceDto: UpdatePlaceDto,
+  ) {
+    const place = await this.placeService.update(+id, updatePlaceDto);
+    return { place };
   }
 
   @Delete(":id")
-  destroy(@Param("id") id: string) {
-    return this.placeService.destroy(+id);
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({ summary: "Soft delete a place!" })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: "Place deleted!",
+  })
+  @ApiResponse({
+    status: HttpStatus.NOT_FOUND,
+    description: "Place id doesn't exists or must be deleted!",
+  })
+  @ApiResponse({
+    status: HttpStatus.UNPROCESSABLE_ENTITY,
+    description: "Place id is not a number!",
+  })
+  //METHOD
+  async destroy(@Param("id") id: string) {
+    const place = await this.placeService.destroy(+id);
+    return { place };
   }
 }
