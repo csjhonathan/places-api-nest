@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  sgbr-db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USERNAME}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    ports:
+      - '5433:5432'
+    volumes:
+      - sgbr-postgres_data:/var/lib/postgresql/data
+    networks:
+      - sgbr-network
+
+  sgbr-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@sgbr-db/${POSTGRES_DATABASE}?schema=public
+    depends_on:
+      - sgbr-db
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: bash -c "npm install && npx prisma generate && npm run start:dev"
+    networks:
+      - sgbr-network
+
+networks:
+  sgbr-network:
+    driver: bridge
+
+volumes:
+  sgbr-postgres_data:
