@@ -18,7 +18,7 @@ npm install
 
 Seguindo a estrutura do arquivo ```.env.example``` crie o arquivo ```.env``` e ```.env.test```. Este é um passo importante para subir o servidor e rodar os testes corretamente, lembre-se de nomear os bancos do ```.env``` e do ```.env.test``` com nomes diferentes para garantir que os testes não interfiram no ambiente de dev, e vice-versa.
 
-Você pode usar qualquer string para sua chave jwt, mas caso não queira pensar muito recomendo [clicar aqui](https://www.uuidgenerator.net/)e copiar um uuid para ser sua chave.
+Você pode usar qualquer string para sua chave jwt, mas caso não queira pensar muito recomendo [clicar aqui](https://www.uuidgenerator.net/) e copiar um uuid para ser sua chave.
 
 ## Rodando o projeto
 
@@ -77,7 +77,7 @@ Para executar os testes, basta ter certeza que todas as configurações foram fe
 npm run test:e2e
 ```
 
-Você poderá acompanhar os resultados dos testes do seu terminal.
+Você poderá acompanhar os resultados dos testes no seu terminal.
 
 ## Documentação e API
 
@@ -98,7 +98,7 @@ Neste projeto estão disponíveis duas formas de documentação:
   Caso não deseje baixar o postman, e queira testar da sua propria maneira, tudo bem. Este projeto conta com uma documentação bem descrita dos endpoints.
 
   - Tenha certeza de ter conseguido rodar o projeto, inclusive o comando ```npm run start:dev```
-  - Uma vez que o [servidor esteja de pé](http://localhost:3000/health_check), basta acessar o endpoint [http://localhost:3000/docs](http://localhost:3000/docs) ou [clicar aqui](http://localhost:3000/docs) para ter acesso a documentação completa da api, com exemplo de respostas, bodies e etc.
+  - Uma vez que o [servidor esteja de pé](http://localhost:3000/health_check), basta acessar o endpoint ``http://localhost:3000/docs`` ou [clicar aqui](http://localhost:3000/docs) para ter acesso a documentação completa da api, com exemplo de respostas, bodies e etc.
 
 ## Tecnologias
 
