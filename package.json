@@ -22,7 +22,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "npm run dev:migrate:generate && npm run dev:migrate:run && npm run test:load-envs -- jest -- --runInBand --config ./test/jest-e2e.json",
+    "test:e2e": "npm run test:migrate:generate && npm run test:migrate:run && npm run test:load-envs -- jest -- --runInBand --config ./test/jest-e2e.json",
     "test:load-envs": "dotenv -e .env.test",
     "test:migrate:generate": "npm run test:load-envs prisma migrate dev",
     "test:migrate:run": "npm run test:load-envs prisma migrate deploy",
