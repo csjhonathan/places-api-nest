@@ -1,73 +1,108 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+## Como baixar o projeto
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
+## Clone o repositório para a sua máquina:
 ```bash
-$ npm install
+git clone git@github.com:csjhonathan/sgrb-nest.git
+```
+ou
+```bash
+git clone https://github.com/csjhonathan/sgrb-nest.git
 ```
 
-## Running the app
-
+### Execute o seguinte comando:
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
 
-## Test
+### Faça as configurações de ambiente
 
+Seguindo a estrutura do arquivo ```.env.example``` crie o arquivo ```.env``` e ```.env.test```. Este é um passo importante para subir o servidor e rodar os testes corretamente, lembre-se de nomear os bancos do ```.env``` e do ```.env.test``` com nomes diferentes para garantir que os testes não interfiram no ambiente de testes, e vice-versa.
+
+Você pode usar qualquer string para sua chave jwt, mas caso não queira pensar muito recomendo [clicar aqui](https://www.uuidgenerator.net/)e copiar um uuid para ser sua chave.
+
+## Rodando o projeto
+
+Agora que as configurações estão feitas, você pode rodar o projeto.
+
+### Manualmente
+
+1. Para gerar as migrations do seu banco, execute o comando:
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm run dev:migrate:generate
 ```
 
-## Support
+2. Para executar as migrations, execute:
+```bash
+npm run dev:migrate:run
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+3. Gere o PrismaClient com o comando:
+```bash
+npx prisma generate
+```
 
-## Stay in touch
+4. Execute o seed com o comando:
+```bash
+npm run seed
+```
+5. Suba o servidor local com o comando:
+```bash
+npm run start:dev
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Feito o passo 5 (e todos os anteriores), o servidor estará disponível em [http://localhost:3000](http://localhost:3000)
 
-## License
+### Docker Compose
 
-Nest is [MIT licensed](LICENSE).
+1. Tenha certeza de ter o Docker e o Docker Compose instalado na sua máquina, este é um passo importante para rodar o projeto com Docker.
+
+2. Rode o seguinte comando para subir o projeto com Docker:
+```bash
+npm run compose:build
+```
+caso voce não tenha buildado anteriormente.
+Ou execute:
+```bash
+npm run compose:up
+```
+caso voce tenha buildado anteriormente.
+
+Feito isso, o servidor estará disponível em [http://localhost:3000](http://localhost:3000). Para testar se a API realmente subiu, voce pode enviar uma requisição para [http://localhost:3000/health_check](http://localhost:3000/health_check)
+
+## Testes
+
+Para executar os testes, basta ter certeza que todas as configurações foram feitas corretamente, e executar o comando:
+
+```bash
+npm run test:e2e
+```
+
+Você poderá acompanhar os resultados dos testes do seu terminal.
+
+## Documentação e API
+
+Neste projeto estão disponíveis duas formas de documentação:
+
+1. [Postman](https://www.postman.com/) (recomendado):\
+  Caso possua o Postman instalado na sua máquina, ou o acesso web, estou disponibilizando o arquivo que está na raíz do projeto chamado ```SGBR API.postman_collection.json```.
+  - Abra o Postman, e crie um ```workspace``` (caso não possua).
+  - No seu ```workspace``` clique no botão com a label ```import```
+  - Tanto na Web quanto no Desktop será mostrado um ```drag and drop```, você deve arrastar o arquivo ```SGBR API.postman_collection.json``` que está na raíz do projeto para lá
+  - Caso o ```drag and drop``` não funcione, basta clicar em ```files``` no modal aberto, e escolher o arquivo
+  - Feito isso, e com o seu servidor de pé, voce poderá fazer suas requisições normalmente.
+
+  P: Por que recomendo o Postman?\
+  R: Nele eu configurei um ambiente onde voce poderá testar com maior integridade os endpoints, e ja configurei scripts que irão configurar os headers das requisições automaticamente, bastando apenas fazer uma unica vez a requisição de ```sign_in```, caso queira testar autenticado
+  
+2. [Swagger](https://swagger.io/):\
+  Caso não deseje baixar o postman, e queira testar da sua propria maneira, tudo bem. Este projeto conta com uma documentação bem descrita dos endpoints.
+
+  - Tenha certeza de ter conseguido rodar o projeto, inclusive o comando ```npm run start:dev```
+  - Uma vez que o [servidor esteja de pé](http://localhost:3000/health_check), basta acessar o endpoint [http://localhost:3000/docs](http://localhost:3000/docs) ou [clicar aqui](http://localhost:3000/docs) para ter acesso a documentação completa da api, com exemplo de respostas, bodies e etc.
+
+## Tecnologias
+
+- TypeScript
+- NestJs
+- Prisma ORM
+- Jest
