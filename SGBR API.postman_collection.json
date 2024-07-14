@@ -79,58 +79,6 @@
 							"body": "{\n    \"message\": [\n        \"name should not be empty\",\n        \"city should not be empty\",\n        \"state should not be empty\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
 						},
 						{
-							"name": "201 Created",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Museu do Amanhã\",\r\n    \"city\" : \"Rio de Janeiro\",\r\n    \"state\" : \"Rio de Janeiro\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{BASE_URL}}/places"
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "183"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"b7-9XEOuGn4f2MJ2Z+lAgNwU9cGHPI\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Jul 2024 21:26:32 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"name\": \"Museu do Amanhã\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"Rio de Janeiro\",\n    \"created_at\": \"2024-07-12T21:26:32.757Z\",\n    \"updated_at\": \"2024-07-12T21:26:32.757Z\",\n    \"discarded_at\": null\n}"
-						},
-						{
 							"name": "401 Unauthorized",
 							"originalRequest": {
 								"method": "POST",
@@ -181,6 +129,58 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Museu do Amanhã\",\r\n    \"city\" : \"Rio de Janeiro\",\r\n    \"state\" : \"Rio de Janeiro\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BASE_URL}}/places"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "194"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c2-FCdoKQUR9rITXec0Rtu5QKWDZvI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:30:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"place\": {\n        \"id\": 28,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-14T19:30:58.173Z\",\n        \"updated_at\": \"2024-07-14T19:30:58.173Z\",\n        \"discarded_at\": null\n    }\n}"
 						}
 					]
 				},
@@ -234,49 +234,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"This place doesn't exists or must be deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
-						},
-						{
-							"name": "200 OK",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": "{{BASE_URL}}/places/1"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "202"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"ca-MSJbUnVapRPVm0VdMKy9rS/Hk/s\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Jul 2024 21:27:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"name\": \"Museu de Hoje\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"Rio de Janeiro\",\n    \"created_at\": \"2024-07-12T21:26:32.757Z\",\n    \"updated_at\": \"2024-07-12T21:27:24.341Z\",\n    \"discarded_at\": \"2024-07-12T21:27:24.340Z\"\n}"
 						},
 						{
 							"name": "422 Unprocessable Entity",
@@ -363,23 +320,13 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
-						}
-					]
-				},
-				{
-					"name": "index",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{BASE_URL}}/places"
-					},
-					"response": [
+						},
 						{
 							"name": "200 OK",
 							"originalRequest": {
-								"method": "GET",
+								"method": "DELETE",
 								"header": [],
-								"url": "{{BASE_URL}}/places"
+								"url": "{{BASE_URL}}/places/24"
 							},
 							"status": "OK",
 							"code": 200,
@@ -395,15 +342,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1843"
+									"value": "219"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"733-a+k2debA06x2gSwLDZnMR0ooWTA\""
+									"value": "W/\"db-9Ku15hzdKxuBSPm1nhewQDCzOHY\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Jul 2024 21:28:03 GMT"
+									"value": "Sun, 14 Jul 2024 19:33:40 GMT"
 								},
 								{
 									"key": "Connection",
@@ -415,8 +362,18 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:51.501Z\",\n        \"updated_at\": \"2024-07-12T21:27:51.501Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:52.467Z\",\n        \"updated_at\": \"2024-07-12T21:27:52.467Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:53.119Z\",\n        \"updated_at\": \"2024-07-12T21:27:53.119Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:53.727Z\",\n        \"updated_at\": \"2024-07-12T21:27:53.727Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:54.986Z\",\n        \"updated_at\": \"2024-07-12T21:27:54.986Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 7,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:55.611Z\",\n        \"updated_at\": \"2024-07-12T21:27:55.611Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 8,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:56.203Z\",\n        \"updated_at\": \"2024-07-12T21:27:56.203Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 9,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:56.730Z\",\n        \"updated_at\": \"2024-07-12T21:27:56.730Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 10,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:57.338Z\",\n        \"updated_at\": \"2024-07-12T21:27:57.338Z\",\n        \"discarded_at\": null\n    },\n    {\n        \"id\": 11,\n        \"name\": \"Museu do Amanhã\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-12T21:27:58.991Z\",\n        \"updated_at\": \"2024-07-12T21:27:58.991Z\",\n        \"discarded_at\": null\n    }\n]"
-						},
+							"body": "{\n    \"place\": {\n        \"id\": 24,\n        \"name\": \"Quinta da Boa Vista\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-14T19:26:05.828Z\",\n        \"updated_at\": \"2024-07-14T19:33:40.143Z\",\n        \"discarded_at\": \"2024-07-14T19:33:40.142Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/places"
+					},
+					"response": [
 						{
 							"name": "401 Unauthorized",
 							"originalRequest": {
@@ -459,6 +416,92 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/places/1"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-p/3B7EWqiawrn400Y94M6zVQORc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:32:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"place\": {\n        \"id\": 1,\n        \"name\": \"Quinta da Boa Vista\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-14T19:26:05.828Z\",\n        \"updated_at\": \"2024-07-14T19:26:05.828Z\",\n        \"discarded_at\": null\n    }\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/places"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "748"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ec-QoNox87/XN5mUrGB5OBC5w4fnW8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:34:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"places\": [\n        {\n            \"id\": 25,\n            \"name\": \"Praia de Copacabana\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"Rio de Janeiro\",\n            \"created_at\": \"2024-07-14T19:26:05.828Z\",\n            \"updated_at\": \"2024-07-14T19:26:05.828Z\",\n            \"discarded_at\": null\n        },\n        {\n            \"id\": 26,\n            \"name\": \"Praça XV\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"Rio de Janeiro\",\n            \"created_at\": \"2024-07-14T19:26:05.828Z\",\n            \"updated_at\": \"2024-07-14T19:26:05.828Z\",\n            \"discarded_at\": null\n        },\n        {\n            \"id\": 27,\n            \"name\": \"Museu do Amanhã\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"Rio de Janeiro\",\n            \"created_at\": \"2024-07-14T19:26:05.828Z\",\n            \"updated_at\": \"2024-07-14T19:26:05.828Z\",\n            \"discarded_at\": null\n        },\n        {\n            \"id\": 28,\n            \"name\": \"Museu do Amanhã\",\n            \"city\": \"Rio de Janeiro\",\n            \"state\": \"Rio de Janeiro\",\n            \"created_at\": \"2024-07-14T19:30:58.173Z\",\n            \"updated_at\": \"2024-07-14T19:30:58.173Z\",\n            \"discarded_at\": null\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -467,7 +510,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}/places/2"
+						"url": "{{BASE_URL}}/places/25"
 					},
 					"response": [
 						{
@@ -641,6 +684,49 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BASE_URL}}/places/25"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c5-77mQDsyx3njXF+e02hjjGkrTlYw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:34:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"place\": {\n        \"id\": 25,\n        \"name\": \"Praia de Copacabana\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-14T19:26:05.828Z\",\n        \"updated_at\": \"2024-07-14T19:26:05.828Z\",\n        \"discarded_at\": null\n    }\n}"
 						}
 					]
 				},
@@ -658,7 +744,7 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}/places/1"
+						"url": "{{BASE_URL}}/places/25"
 					},
 					"response": [
 						{
@@ -712,58 +798,6 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"This place doesn't exists or must be deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
-						},
-						{
-							"name": "200 OK",
-							"originalRequest": {
-								"method": "PATCH",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Museu de Hoje\",\r\n    \"city\" : \"Rio de Janeiro\",\r\n    \"state\" : \"Rio de Janeiro\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{BASE_URL}}/places/1"
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "180"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"b4-0Qjzbf8Ub8jhdwNgk+wX01dYyvA\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Jul 2024 21:27:06 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"name\": \"Museu de Hoje\",\n    \"city\": \"Rio de Janeiro\",\n    \"state\": \"Rio de Janeiro\",\n    \"created_at\": \"2024-07-12T21:26:32.757Z\",\n    \"updated_at\": \"2024-07-12T21:27:06.207Z\",\n    \"discarded_at\": null\n}"
 						},
 						{
 							"name": "422 Unprocessable Entity",
@@ -868,6 +902,58 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
+						},
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Museu de Hoje\",\r\n    \"city\" : \"Rio de Janeiro\",\r\n    \"state\" : \"Rio de Janeiro\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BASE_URL}}/places/25"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "191"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bf-6LffANTpXWHNrG9/QRmWDdpz9OA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:34:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"place\": {\n        \"id\": 25,\n        \"name\": \"Museu de Hoje\",\n        \"city\": \"Rio de Janeiro\",\n        \"state\": \"Rio de Janeiro\",\n        \"created_at\": \"2024-07-14T19:26:05.828Z\",\n        \"updated_at\": \"2024-07-14T19:34:44.434Z\",\n        \"discarded_at\": null\n    }\n}"
 						}
 					]
 				}
@@ -899,7 +985,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
+							"raw": "{\r\n    \"email\": \"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -916,7 +1002,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"jhonaathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
+									"raw": "{\r\n    \"email\": \"test3@email.com\",\r\n    \"password\": \"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -968,7 +1054,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"12q3123\"\r\n}",
+									"raw": "{\r\n    \"email\": \"test@email.com\",\r\n    \"password\": \"123455\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1014,13 +1100,13 @@
 							"body": "{\n    \"message\": \"Invalid credentials!\",\n    \"error\": \"Unauthorized\",\n    \"statusCode\": 401\n}"
 						},
 						{
-							"name": "201 Created",
+							"name": "200 OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
+									"raw": "{\r\n    \"email\": \"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1029,8 +1115,8 @@
 								},
 								"url": "{{BASE_URL}}/auth/sign_in"
 							},
-							"status": "Created",
-							"code": 201,
+							"status": "OK",
+							"code": 200,
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
@@ -1043,15 +1129,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "205"
+									"value": "195"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"cd-hQrkYMRam0kqyUAEfUIcvJed64Y\""
+									"value": "W/\"c3-HUhaKmT7RpNesGqzOisTCR/0qYg\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 12 Jul 2024 23:05:38 GMT"
+									"value": "Sun, 14 Jul 2024 19:29:24 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1063,7 +1149,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJqaG9uYXRoYW5AZW1haWwuY29tIiwibmFtZSI6Ikpob25hdGhhbiIsImlhdCI6MTcyMDgyNTUzOCwic3ViIjoiMSJ9.ZPxYjFtEJ3o9tvLfB8zIUPcIpSfyBAOvIgpD6sMc0F4\"\n}"
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImVtYWlsIjoidGVzdEBlbWFpbC5jb20iLCJuYW1lIjoiVGVzdCIsImlhdCI6MTcyMDk4NTM2NCwic3ViIjoiMzgifQ.2CNN5n5-KrLQ2x85lLcP6IfHd7OhAYPRXpctJ7m8swk\"\n}"
 						}
 					]
 				},
@@ -1074,7 +1160,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"Jhonathan\",\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
+							"raw": "{\r\n    \"name\" : \"Teste2\",\r\n    \"email\": \"test2@email.com\",\r\n    \"password\": \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1085,65 +1171,13 @@
 					},
 					"response": [
 						{
-							"name": "201 Created",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Jhonathan\",\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{BASE_URL}}/auth/sign_up"
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "57"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"39-NUPkMEGWbbFxnuOgvjVtVTzpcgE\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 12 Jul 2024 23:03:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"id\": 1,\n    \"name\": \"Jhonathan\",\n    \"email\": \"jhonathan@email.com\"\n}"
-						},
-						{
 							"name": "409 Conflict",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Jhonathan\",\r\n    \"email\": \"jhonathan@email.com\",\r\n    \"password\": \"123123\"\r\n}",
+									"raw": "{\r\n    \"name\" : \"Test\",\r\n    \"email\": \"test@email.com\",\r\n    \"password\": \"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1195,7 +1229,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"\",\r\n    \"email\": \"\",\r\n    \"password\": \"123123\"\r\n}",
+									"raw": "{\r\n    \"name\" : \"\",\r\n    \"email\": \"\",\r\n    \"password\": \"123456\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1239,6 +1273,58 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": [\n        \"name should not be empty\",\n        \"email must be an email\"\n    ],\n    \"error\": \"Bad Request\",\n    \"statusCode\": 400\n}"
+						},
+						{
+							"name": "201 Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Teste2\",\r\n    \"email\": \"test2@email.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BASE_URL}}/auth/sign_up"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-LNxR2Hc7qu4pNGbRlC2tPH/SN/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jul 2024 19:19:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 34,\n    \"name\": \"Teste\",\n    \"email\": \"test@email.com\"\n}"
 						}
 					]
 				}
