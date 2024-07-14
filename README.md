@@ -16,7 +16,7 @@ npm install
 
 ### Faça as configurações de ambiente
 
-Seguindo a estrutura do arquivo ```.env.example``` crie o arquivo ```.env``` e ```.env.test```. Este é um passo importante para subir o servidor e rodar os testes corretamente, lembre-se de nomear os bancos do ```.env``` e do ```.env.test``` com nomes diferentes para garantir que os testes não interfiram no ambiente de testes, e vice-versa.
+Seguindo a estrutura do arquivo ```.env.example``` crie o arquivo ```.env``` e ```.env.test```. Este é um passo importante para subir o servidor e rodar os testes corretamente, lembre-se de nomear os bancos do ```.env``` e do ```.env.test``` com nomes diferentes para garantir que os testes não interfiram no ambiente de dev, e vice-versa.
 
 Você pode usar qualquer string para sua chave jwt, mas caso não queira pensar muito recomendo [clicar aqui](https://www.uuidgenerator.net/)e copiar um uuid para ser sua chave.
 
