@@ -6,10 +6,10 @@ import {
 } from "@nestjs/common";
 import { UserService } from "../user/user.service";
 import { SignInDto } from "./dto/sign-in.dto";
-import * as bcrypt from "bcrypt";
 import { JwtService } from "@nestjs/jwt";
 import { User } from "@prisma/client";
 import { CreateUserDto } from "../user/dto/create-user.dto";
+import { EncryptionHelper } from "../helpers/libs/encryption";
 
 @Injectable()
 export class AuthService {
@@ -35,10 +35,10 @@ export class AuthService {
       throw new NotFoundException("User must be exists!");
     }
 
-    const passwordIsValid = bcrypt.compareSync(
-      signInDto.password,
-      user.password,
-    );
+    const passwordIsValid = EncryptionHelper.compareData({
+      signInPassword: signInDto.password,
+      userPassword: user.password,
+    });
 
     if (!passwordIsValid) {
       throw new UnauthorizedException("Invalid credentials!");

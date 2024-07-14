@@ -1,22 +1,17 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateUserDto } from "./dto/create-user.dto";
-import * as bcrypt from "bcrypt";
+import { EncryptionHelper } from "../helpers/libs/encryption";
 
 @Injectable()
 export class UserRepository {
-  private PASSWORD_SHUFFLE = 10;
-
   constructor(private readonly prisma: PrismaService) {}
 
   create(createUserDto: CreateUserDto) {
     return this.prisma.user.create({
       data: {
         ...createUserDto,
-        password: bcrypt.hashSync(
-          createUserDto.password,
-          this.PASSWORD_SHUFFLE,
-        ),
+        password: EncryptionHelper.hashData(createUserDto.password),
       },
       select: {
         id: true,
