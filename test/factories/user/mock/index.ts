@@ -23,11 +23,16 @@ export class MockUserFactorie {
     }
   }
 
-  static completeBody() {
+  static completeBody(params?: {
+    name?: string;
+    email?: string;
+    password?: string;
+  }) {
+    const { name, email, password } = params || {};
     return {
-      name: faker.person.firstName(),
-      email: faker.internet.email(),
-      password: faker.internet.password(),
+      name: name || faker.person.firstName(),
+      email: email || faker.internet.email(),
+      password: password || faker.internet.password(),
     } satisfies { name: string; email: string; password: string };
   }
 }
