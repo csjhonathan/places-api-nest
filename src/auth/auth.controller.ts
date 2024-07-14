@@ -44,11 +44,11 @@ export class AuthController {
   }
 
   @Post("sign_in")
-  @HttpCode(HttpStatus.CREATED)
+  @HttpCode(HttpStatus.OK)
   @ApiOperation({ summary: "Sign in a user" })
   @ApiBody({ type: SignInDto })
   @ApiResponse({
-    status: HttpStatus.CREATED,
+    status: HttpStatus.OK,
     description: "User successfully signed in",
     content: {
       "application/json": {
