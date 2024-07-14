@@ -79,7 +79,7 @@ describe("AuthController (e2e)", () => {
       expect(statusCode).toBe(HttpStatus.NOT_FOUND);
     });
 
-    it("should return un unauthorized error when users exists but passed incorret credentials", async () => {
+    it("should return un unauthorized error when users exists but incorret credentials is provided", async () => {
       const data = MockUserFactorie.completeBody();
 
       const { email } = await DbUserFactorie.createEncrypted({
@@ -96,7 +96,7 @@ describe("AuthController (e2e)", () => {
       expect(statusCode).toBe(HttpStatus.UNAUTHORIZED);
     });
 
-    it("should return an success response when user exists and passed correct credentials", async () => {
+    it("should return an success response when user exists and correct credentials is provided", async () => {
       const data = MockUserFactorie.completeBody();
 
       const { email } = await DbUserFactorie.createEncrypted({

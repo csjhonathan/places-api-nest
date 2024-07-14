@@ -110,7 +110,7 @@ export class PlaceController {
   })
   @ApiResponse({
     status: HttpStatus.NOT_FOUND,
-    description: "Place id doesn't exists or must be deleted!",
+    description: "Place id doesn't exists or has been deleted!",
   })
   @ApiResponse({
     status: HttpStatus.UNPROCESSABLE_ENTITY,
@@ -134,7 +134,7 @@ export class PlaceController {
   })
   @ApiResponse({
     status: HttpStatus.NOT_FOUND,
-    description: "Place id doesn't exists or must be deleted!",
+    description: "Place id doesn't exists or has been deleted!",
   })
   @ApiResponse({
     status: HttpStatus.UNPROCESSABLE_ENTITY,

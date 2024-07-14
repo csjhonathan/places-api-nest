@@ -42,7 +42,7 @@ export class PlaceService {
 
     if (!place) {
       throw new NotFoundException(
-        "This place doesn't exists or must be deleted!",
+        "This place doesn't exists or has been deleted!",
       );
     }
 

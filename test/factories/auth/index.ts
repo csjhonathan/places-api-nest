@@ -7,7 +7,7 @@ export class AuthenticationFactorie {
     return `Bearer ${faker.lorem.word()}`;
   }
 
-  static generateToken(user: User) {
+  static generateToken(user: Pick<User, "id" | "name" | "email">) {
     const jwtService = new JwtService({ secret: process.env.JWT_SECRET });
 
     const { id, email, name } = user;

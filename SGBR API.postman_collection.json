@@ -233,7 +233,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"This place doesn't exists or must be deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+							"body": "{\n    \"message\": \"This place doesn't exists or has been deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
 						},
 						{
 							"name": "422 Unprocessable Entity",
@@ -554,7 +554,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"This place doesn't exists or must be deleted!\"\n}"
+							"body": "{\n    \"message\": \"This place doesn't exists or has been deleted!\"\n}"
 						},
 						{
 							"name": "200 OK",
@@ -797,7 +797,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"This place doesn't exists or must be deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
+							"body": "{\n    \"message\": \"This place doesn't exists or has been deleted!\",\n    \"error\": \"Not Found\",\n    \"statusCode\": 404\n}"
 						},
 						{
 							"name": "422 Unprocessable Entity",
