@@ -50,6 +50,8 @@ npm run seed
 npm run start:dev
 ```
 
+Caso voce encontre algum erro de permissão ao rodar este comando, tente excluir a pasta ```dist``` com permissões de administrador e rode o comando novamente.
+
 Feito o passo 5 (e todos os anteriores), o servidor estará disponível em [http://localhost:3000](http://localhost:3000)
 
 ### Docker Compose
