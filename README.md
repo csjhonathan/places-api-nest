@@ -2,11 +2,11 @@
 
 ## Clone o repositório para a sua máquina:
 ```bash
-git clone git@github.com:csjhonathan/sgbr-nest.git
+git clone git@github.com:csjhonathan/places-api-nest.git
 ```
 ou
 ```bash
-git clone https://github.com/csjhonathan/sgbr-nest.git
+git clone https://github.com/csjhonathan/places-api-nest.git
 ```
 
 ### Execute o seguinte comando:
