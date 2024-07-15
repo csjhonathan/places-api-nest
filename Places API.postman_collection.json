@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "85912890-50a1-4a78-bb87-8dcf7c1423d6",
-		"name": "SGBR API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_postman_id": "35740db9-9aaf-4ff6-9d78-13e936bf26f6",
+		"name": "Places API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34418446"
 	},
 	"item": [
@@ -23,7 +23,15 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}/places"
+						"url": {
+							"raw": "{{BASE_URL}}/places",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"places"
+							]
+						}
 					},
 					"response": [
 						{
@@ -40,7 +48,15 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places"
+								"url": {
+									"raw": "{{BASE_URL}}/places",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -92,7 +108,15 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places"
+								"url": {
+									"raw": "{{BASE_URL}}/places",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -144,7 +168,15 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places"
+								"url": {
+									"raw": "{{BASE_URL}}/places",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
@@ -189,7 +221,16 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{BASE_URL}}/places/1"
+						"url": {
+							"raw": "{{BASE_URL}}/places/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"places",
+								"1"
+							]
+						}
 					},
 					"response": [
 						{
@@ -197,7 +238,16 @@
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "Not Found",
 							"code": 404,
@@ -240,7 +290,16 @@
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{BASE_URL}}/places/b"
+								"url": {
+									"raw": "{{BASE_URL}}/places/b",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"b"
+									]
+								}
 							},
 							"status": "Unprocessable Entity",
 							"code": 422,
@@ -283,7 +342,16 @@
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -326,7 +394,16 @@
 							"originalRequest": {
 								"method": "DELETE",
 								"header": [],
-								"url": "{{BASE_URL}}/places/24"
+								"url": {
+									"raw": "{{BASE_URL}}/places/24",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"24"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -371,7 +448,15 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}/places"
+						"url": {
+							"raw": "{{BASE_URL}}/places",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"places"
+							]
+						}
 					},
 					"response": [
 						{
@@ -379,7 +464,15 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places"
+								"url": {
+									"raw": "{{BASE_URL}}/places",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -422,7 +515,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -465,7 +567,15 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places"
+								"url": {
+									"raw": "{{BASE_URL}}/places",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -510,7 +620,16 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}/places/25"
+						"url": {
+							"raw": "{{BASE_URL}}/places/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"places",
+								"2"
+							]
+						}
 					},
 					"response": [
 						{
@@ -518,7 +637,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "Not Found",
 							"code": 404,
@@ -561,7 +689,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/2"
+								"url": {
+									"raw": "{{BASE_URL}}/places/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"2"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -604,7 +741,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/b"
+								"url": {
+									"raw": "{{BASE_URL}}/places/b",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"b"
+									]
+								}
 							},
 							"status": "Unprocessable Entity",
 							"code": 422,
@@ -647,7 +793,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/2"
+								"url": {
+									"raw": "{{BASE_URL}}/places/2",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"2"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -690,7 +845,16 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"url": "{{BASE_URL}}/places/25"
+								"url": {
+									"raw": "{{BASE_URL}}/places/25",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"25"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -744,7 +908,16 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}/places/25"
+						"url": {
+							"raw": "{{BASE_URL}}/places/3",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"places",
+								"3"
+							]
+						}
 					},
 					"response": [
 						{
@@ -761,7 +934,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "Not Found",
 							"code": 404,
@@ -813,7 +995,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places/b"
+								"url": {
+									"raw": "{{BASE_URL}}/places/b",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"b"
+									]
+								}
 							},
 							"status": "Unprocessable Entity",
 							"code": 422,
@@ -865,7 +1056,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places/1"
+								"url": {
+									"raw": "{{BASE_URL}}/places/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"1"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -917,7 +1117,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/places/25"
+								"url": {
+									"raw": "{{BASE_URL}}/places/25",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"places",
+										"25"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -992,7 +1201,16 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}/auth/sign_in"
+						"url": {
+							"raw": "{{BASE_URL}}/auth/sign_in",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_in"
+							]
+						}
 					},
 					"response": [
 						{
@@ -1009,7 +1227,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_in"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_in",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_in"
+									]
+								}
 							},
 							"status": "Not Found",
 							"code": 404,
@@ -1061,7 +1288,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_in"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_in",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_in"
+									]
+								}
 							},
 							"status": "Unauthorized",
 							"code": 401,
@@ -1113,7 +1349,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_in"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_in",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_in"
+									]
+								}
 							},
 							"status": "OK",
 							"code": 200,
@@ -1167,7 +1412,16 @@
 								}
 							}
 						},
-						"url": "{{BASE_URL}}/auth/sign_up"
+						"url": {
+							"raw": "{{BASE_URL}}/auth/sign_up",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"sign_up"
+							]
+						}
 					},
 					"response": [
 						{
@@ -1184,7 +1438,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_up"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_up",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_up"
+									]
+								}
 							},
 							"status": "Conflict",
 							"code": 409,
@@ -1236,7 +1499,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_up"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_up",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_up"
+									]
+								}
 							},
 							"status": "Bad Request",
 							"code": 400,
@@ -1288,7 +1560,16 @@
 										}
 									}
 								},
-								"url": "{{BASE_URL}}/auth/sign_up"
+								"url": {
+									"raw": "{{BASE_URL}}/auth/sign_up",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"auth",
+										"sign_up"
+									]
+								}
 							},
 							"status": "Created",
 							"code": 201,
@@ -1335,7 +1616,15 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "{{BASE_URL}}/health_check"
+				"url": {
+					"raw": "{{BASE_URL}}/health_check",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"health_check"
+					]
+				}
 			},
 			"response": [
 				{
@@ -1343,7 +1632,15 @@
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"url": "{{BASE_URL}}/health_check"
+						"url": {
+							"raw": "{{BASE_URL}}/health_check",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"health_check"
+							]
+						}
 					},
 					"status": "OK",
 					"code": 200,
@@ -1385,8 +1682,7 @@
 		}
 	],
 	"auth": {
-		"type": "inherit",
-		"inherit": {}
+		"type": "inherit"
 	},
 	"event": [
 		{

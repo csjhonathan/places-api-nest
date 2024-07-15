@@ -84,10 +84,10 @@ Você poderá acompanhar os resultados dos testes no seu terminal.
 Neste projeto estão disponíveis duas formas de documentação:
 
 1. [Postman](https://www.postman.com/) (recomendado):\
-  Caso possua o Postman instalado na sua máquina, ou o acesso web, estou disponibilizando o arquivo que está na raíz do projeto chamado ```SGBR API.postman_collection.json```.
+  Caso possua o Postman instalado na sua máquina, ou o acesso web, estou disponibilizando o arquivo que está na raíz do projeto chamado ```Places API.postman_collection.json```.
   - Abra o Postman, e crie um ```workspace``` (caso não possua).
   - No seu ```workspace``` clique no botão com a label ```import```
-  - Tanto na Web quanto no Desktop será mostrado um ```drag and drop```, você deve arrastar o arquivo ```SGBR API.postman_collection.json``` que está na raíz do projeto para lá
+  - Tanto na Web quanto no Desktop será mostrado um ```drag and drop```, você deve arrastar o arquivo ```Places API.postman_collection.json``` que está na raíz do projeto para lá
   - Caso o ```drag and drop``` não funcione, basta clicar em ```files``` no modal aberto, e escolher o arquivo
   - Feito isso, e com o seu servidor de pé, voce poderá fazer suas requisições normalmente.
 

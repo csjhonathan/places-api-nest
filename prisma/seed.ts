@@ -5,38 +5,46 @@ const prisma = new PrismaClient();
 
 async function dbSeed() {
   try {
-    await prisma.user.deleteMany();
-    await prisma.place.deleteMany();
+    const places = await prisma.place.findMany();
+    const users = await prisma.user.findMany();
 
-    const places_names = [
-      "Museu do Amanhã",
-      "Quinta da Boa Vista",
-      "Praça XV",
-      "Praia de Copacabana",
-    ];
+    if (places.length) {
+      console.log("Places already seeded");
+    } else {
+      const places_names = [
+        "Museu do Amanhã",
+        "Quinta da Boa Vista",
+        "Praça XV",
+        "Praia de Copacabana",
+      ];
 
-    console.log("Creating places...");
-    await Promise.all(
-      places_names.map(async (name) => {
-        await prisma.place.create({
-          data: {
-            city: "Rio de Janeiro",
-            state: "Rio de Janeiro",
-            name,
-          },
-        });
-        console.log(`Place:${name} added in database!`);
-      }),
-    );
+      console.log("Creating places...");
+      await Promise.all(
+        places_names.map(async (name) => {
+          await prisma.place.create({
+            data: {
+              city: "Rio de Janeiro",
+              state: "Rio de Janeiro",
+              name,
+            },
+          });
+          console.log(`Place:${name} added in database!`);
+        }),
+      );
+    }
 
-    console.log("Creating test user...");
-    await prisma.user.create({
-      data: {
-        name: "Test",
-        email: "test@email.com",
-        password: EncryptionHelper.hashData("123456"),
-      },
-    });
+    if (users.length) {
+      console.log("Users already seeded");
+    } else {
+      console.log("Creating test user...");
+      await prisma.user.create({
+        data: {
+          name: "Test",
+          email: "test@email.com",
+          password: EncryptionHelper.hashData("123456"),
+        },
+      });
+    }
 
     console.log("Seed completed");
   } catch (error) {
