@@ -1,7 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 import { EncryptionHelper } from "../src/helpers/libs/encryption";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({
+  log: ["query", "info", "warn", "error"],
+});
 
 async function dbSeed() {
   try {
