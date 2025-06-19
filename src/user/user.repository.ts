@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import { PrismaService } from "../prisma/prisma.service";
+import { PrismaService } from "@/prisma/prisma.service";
 import { CreateUserDto } from "./dto/create-user.dto";
-import { EncryptionHelper } from "../helpers/libs/encryption";
+import { EncryptionHelper } from "@/helpers/libs/encryption";
 import { User } from "@prisma/client";
 
 @Injectable()
@@ -12,7 +12,9 @@ export class UserRepository {
     return this.prisma.user.create({
       data: {
         ...createUserDto,
-        password: EncryptionHelper.hashData(createUserDto.password),
+        password: EncryptionHelper.hashData({
+          raw_data: createUserDto.password,
+        }),
       },
       select: {
         id: true,

@@ -1,17 +1,17 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { HttpStatus, INestApplication, ValidationPipe } from "@nestjs/common";
 import * as request from "supertest";
-import { AppModule } from "../../src/app.module";
-import { PrismaService } from "../../src/prisma/prisma.service";
+import { AppModule } from "@/app.module";
+import { PrismaService } from "@/prisma/prisma.service";
 import TestAgent from "supertest/lib/agent";
-import { TestHelpers } from "../helpers/test.helpers";
+import { TestHelpers } from "@/test/helpers/test.helpers";
 import { faker } from "@faker-js/faker";
-import { AuthenticationFactorie } from "../factories/auth";
-import { DbUserFactorie } from "../factories/user/db";
-import { MockUserFactorie } from "../factories/user/mock";
-import { MockPlaceFactorie } from "../factories/place/mock";
+import { AuthenticationFactorie } from "@/test/factories/auth";
+import { DbUserFactorie } from "@/test/factories/user/db";
+import { MockUserFactorie } from "@/test/factories/user/mock";
+import { MockPlaceFactorie } from "@/test/factories/place/mock";
 import { Place } from "@prisma/client";
-import { DbPlaceFactorie } from "../factories/place/db";
+import { DbPlaceFactorie } from "@/test/factories/place/db";
 
 describe("PlaceController (e2e)", () => {
   let app: INestApplication;

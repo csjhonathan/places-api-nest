@@ -1,12 +1,12 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { HttpStatus, INestApplication, ValidationPipe } from "@nestjs/common";
 import * as request from "supertest";
-import { AppModule } from "../../src/app.module";
-import { PrismaService } from "../../src/prisma/prisma.service";
+import { AppModule } from "@/app.module";
+import { PrismaService } from "@/prisma/prisma.service";
 import TestAgent from "supertest/lib/agent";
-import { TestHelpers } from "../helpers/test.helpers";
-import { MockUserFactorie } from "../factories/user/mock";
-import { DbUserFactorie } from "../factories/user/db";
+import { TestHelpers } from "@/test/helpers/test.helpers";
+import { MockUserFactorie } from "@/test/factories/user/mock";
+import { DbUserFactorie } from "@/test/factories/user/db";
 
 describe("AuthController (e2e)", () => {
   let app: INestApplication;

@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
-import { PrismaService } from "../../../../src/prisma/prisma.service";
-import { EncryptionHelper } from "../../../../src/helpers/libs/encryption";
-import { CreateUserDto } from "../../../../src/user/dto/create-user.dto";
+import { PrismaService } from "@/prisma/prisma.service";
+import { EncryptionHelper } from "@/helpers/libs/encryption";
+import { CreateUserDto } from "@/user/dto/create-user.dto";
 
 export class DbUserFactorie {
   static create(prisma: PrismaService) {
@@ -30,7 +30,9 @@ export class DbUserFactorie {
       data: {
         email: user.email,
         name: user.name,
-        password: EncryptionHelper.hashData(user.password),
+        password: EncryptionHelper.hashData({
+          raw_data: user.password,
+        }),
       },
       select: {
         id: true,

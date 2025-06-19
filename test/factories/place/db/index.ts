@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { PrismaService } from "../../../../src/prisma/prisma.service";
+import { PrismaService } from "@/prisma/prisma.service";
 import { Place } from "@prisma/client";
 
 export class DbPlaceFactorie {

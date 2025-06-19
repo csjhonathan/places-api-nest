@@ -4,12 +4,12 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from "@nestjs/common";
-import { UserService } from "../user/user.service";
+import { UserService } from "@/user/user.service";
 import { SignInDto } from "./dto/sign-in.dto";
 import { JwtService } from "@nestjs/jwt";
 import { User } from "@prisma/client";
-import { CreateUserDto } from "../user/dto/create-user.dto";
-import { EncryptionHelper } from "../helpers/libs/encryption";
+import { CreateUserDto } from "@/user/dto/create-user.dto";
+import { EncryptionHelper } from "@/helpers/libs/encryption";
 
 @Injectable()
 export class AuthService {
@@ -36,8 +36,8 @@ export class AuthService {
     }
 
     const passwordIsValid = EncryptionHelper.compareData({
-      signInPassword: signInDto.password,
-      userPassword: user.password,
+      raw_data: signInDto.password,
+      encrypted_data: user.password,
     });
 
     if (!passwordIsValid) {

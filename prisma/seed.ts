@@ -43,7 +43,9 @@ async function dbSeed() {
         data: {
           name: "Test",
           email: "test@email.com",
-          password: EncryptionHelper.hashData("123456"),
+          password: EncryptionHelper.hashData({
+            raw_data: "123456",
+          }),
         },
       });
     }

@@ -20,10 +20,10 @@ import {
   ApiOperation,
   ApiResponse,
 } from "@nestjs/swagger";
-import { PlaceHelpers } from "../helpers/place";
-import { CurrentUser } from "../decorators/current-user.decorator";
+import { PlaceHelpers } from "@/helpers/place";
+import { CurrentUser } from "@/decorators/current-user.decorator";
 import { User } from "@prisma/client";
-import { JWTAuthGuard } from "../guards/jwt.guard";
+import { JWTAuthGuard } from "@/guards/jwt.guard";
 
 @ApiTags("places")
 @ApiBearerAuth()
