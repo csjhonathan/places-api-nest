@@ -3,6 +3,7 @@ import { Injectable } from "@nestjs/common";
 // import { UpdateUserDto } from "./dto/update-user.dto";
 import { UserRepository } from "./user.repository";
 import { CreateUserDto } from "./dto/create-user.dto";
+import { User } from "@prisma/client";
 
 @Injectable()
 export class UserService {
@@ -12,7 +13,7 @@ export class UserService {
     return this.userRepository.create(createUserDto);
   }
 
-  show(id: number) {
+  show(id: number): Promise<User | null> {
     return this.userRepository.show(id);
   }
 

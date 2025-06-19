@@ -21,11 +21,13 @@ import {
   ApiResponse,
 } from "@nestjs/swagger";
 import { PlaceHelpers } from "../helpers/place";
-import { AuthGuard } from "../guards/auth.guard";
+import { CurrentUser } from "../decorators/current-user.decorator";
+import { User } from "@prisma/client";
+import { JWTAuthGuard } from "../guards/jwt.guard";
 
 @ApiTags("places")
 @ApiBearerAuth()
-@UseGuards(AuthGuard)
+@UseGuards(JWTAuthGuard)
 @ApiResponse({
   status: HttpStatus.UNAUTHORIZED,
   description: "Unauthorized, you need to provide a valid token!",
@@ -53,8 +55,10 @@ export class PlaceController {
       },
     },
   })
+
   //METHOD
-  async index() {
+  async index(@CurrentUser() user: User) {
+    console.log("user :>> ", user);
     const places = await this.placeService.index();
     return { places };
   }
@@ -80,6 +84,7 @@ export class PlaceController {
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: "Place id is not a number!",
   })
+
   //METHOD
   async show(@Param("id") id: string) {
     const place = await this.placeService.show(+id);
@@ -94,6 +99,7 @@ export class PlaceController {
     status: HttpStatus.BAD_REQUEST,
     description: "Your have a required field problem!",
   })
+
   //METHOD
   async create(@Body() createPlaceDto: CreatePlaceDto) {
     const place = await this.placeService.create(createPlaceDto);
@@ -116,6 +122,7 @@ export class PlaceController {
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: "Place id is not a number!",
   })
+
   //METHOD
   async update(
     @Param("id") id: string,
@@ -140,6 +147,7 @@ export class PlaceController {
     status: HttpStatus.UNPROCESSABLE_ENTITY,
     description: "Place id is not a number!",
   })
+
   //METHOD
   async destroy(@Param("id") id: string) {
     const place = await this.placeService.destroy(+id);

@@ -47,15 +47,6 @@ export class AuthService {
     return this.generateToken(user);
   }
 
-  checkToken(token: string): {
-    email: string;
-    name: string;
-    sub: number;
-  } {
-    const tokenData = this.jwtService.verify(token);
-    return { ...tokenData, sub: parseInt(tokenData.sub) };
-  }
-
   private getUserByEmail(email: string) {
     return this.usersService.showByEmail(email);
   }

@@ -2,6 +2,7 @@ import { Injectable } from "@nestjs/common";
 import { PrismaService } from "../prisma/prisma.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { EncryptionHelper } from "../helpers/libs/encryption";
+import { User } from "@prisma/client";
 
 @Injectable()
 export class UserRepository {
@@ -21,7 +22,7 @@ export class UserRepository {
     });
   }
 
-  show(id: number) {
+  show(id: number): Promise<User | null> {
     return this.prisma.user.findUnique({
       where: {
         id,
